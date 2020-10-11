@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from contextlib import  contextmanager
+from contextlib import contextmanager
 import time
 
 
@@ -7,8 +7,9 @@ class Timer:
     """
     Timer class
     """
+
     def __init__(self):
-        self._start=None
+        self._start = None
         self.elapsed = 0.0
 
     def __enter__(self):
@@ -30,7 +31,7 @@ def timed():
     start = time.time()
     print(f"start at {start}")
     try:
-        yield
+        yield  # yield to body of `with` statement
     finally:
         end = time.time()
         print(f"End at {end}, {end - start} elapsed")
@@ -41,8 +42,6 @@ if __name__ == '__main__':
         time.sleep(4)
     print(t.elapsed)
 
-    #method 2: use decorator
+    # method 2: use decorator
     with timed():
         time.sleep((3))
-
-
