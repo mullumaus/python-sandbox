@@ -35,7 +35,8 @@ def sorted_loop():
     employee1 = Employee("Mike Brown", 99)
     employee2 = Employee("Jennifer Thompson", 97)
     employees = [employee0, employee1, employee2]
-    # For the key argument, we can specify a function of one argument to compare each element in the iterable.
+    # For the key argument, we can specify a function of one argument to
+    # compare each element in the iterable.
     for employee in sorted(employees, key=lambda x: x.score, reverse=True):
         print(f"{employee.name} score: {employee.score}")
 
